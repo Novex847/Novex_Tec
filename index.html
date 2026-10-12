@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOVEX TEC – Tech, Gadgets und digitale Dienstleistungen.">
+  <title>NOVEX TEC | Technology & Digital Services</title>
+  <style>
+    :root {
+      --bg: #080b12;
+      --panel: #111824;
+      --blue: #2388ff;
+      --silver: #cbd5e1;
+      --muted: #9ba9bc;
+      --line: #263448;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f5f7fb;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 18, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .logo span { color: var(--blue); }
+    .links { display: flex; align-items: center; gap: 24px; }
+    .links a:hover { color: var(--blue); }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--blue);
+      transition: .2s;
+    }
+    .button:hover {
+      background: #0868db;
+      transform: translateY(-2px);
+    }
+    .button.secondary {
+      background: transparent;
+      border-color: #53657d;
+    }
+
+    .hero {
+      padding: 105px 0 95px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, #12356b 0%, transparent 58%);
+    }
+    .eyebrow {
+      color: #69adff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .8rem;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.3rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
+    h1 span { color: var(--blue); }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--silver);
+      font-size: 1.1rem;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    section { padding: 75px 0; }
+    .section-title { text-align: center; margin-bottom: 38px; }
+    .section-title h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 0 10px; }
+    .section-title p { color: var(--muted); margin: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .card:hover { border-color: var(--blue); }
+    .symbol { font-size: 1.8rem; }
+    .card h3 { margin: 12px 0 8px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .about {
+      background: #0c111b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .about-inner {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+    .about-inner p { color: var(--silver); }
+
+    .contact-box {
+      max-width: 720px;
+      margin: auto;
+      padding: 35px;
+      text-align: center;
+      background: linear-gradient(135deg, #111824, #10264a);
+      border: 1px solid #29476f;
+      border-radius: 18px;
+    }
+    .contact-box p { color: var(--silver); }
+    .email {
+      display: inline-block;
+      margin: 10px 0 22px;
+      color: #81bbff;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 16px 0; align-items: flex-start; }
+      .links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+      .links a { font-size: .85rem; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0; }
+      section { padding: 55px 0; }
+      .contact-box { padding: 25px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">NOVEX <span>TEC</span></a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#about">Über uns</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Technology · Innovation · Digital</div>
+        <h1>Think Smart.<br><span>Think NOVEX.</span></h1>
+        <p>
+          Deine Anlaufstelle für Tech & Gadgets, interessante Deals
+          und digitale Dienstleistungen. Einfach, modern und zuverlässig.
+        </p>
+        <div class="actions">
+          <a class="button" href="#services">Unsere Services entdecken</a>
+          <a class="button secondary" href="#contact">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Was wir anbieten</h2>
+          <p>Digitale Lösungen und Technik an einem Ort.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="symbol">⌘</div>
+            <h3>Tech & Gadgets</h3>
+            <p>Entdecke interessante Technik, praktische Gadgets
+              und ausgewählte Produkte für deinen Alltag.</p>
+          </article>
+
+          <article class="card">
+            <div class="symbol">▤</div>
+            <h3>Reports & PDFs</h3>
+            <p>Übersichtlich aufbereitete Reports und digitale
+              Dokumente für deine Projekte.</p>
+          </article>
+
+          <article class="card">
+            <div class="symbol">▣</div>
+            <h3>Präsentationen</h3>
+            <p>Klare, moderne Präsentationen und strukturierte
+              Inhalte für unterschiedliche Anforderungen.</p>
+          </article>
+
+          <article class="card">
+            <div class="symbol">✦</div>
+            <h3>Digitale Dokumente</h3>
+            <p>Professionell formatierte Unterlagen, die Informationen
+              verständlich und übersichtlich vermitteln.</p>
+          </article>
+
+          <article class="card">
+            <div class="symbol">↗</div>
+            <h3>Gute Deals</h3>
+            <p>Spannende Angebote und interessante Fundstücke
+              aus der Welt der Technik.</p>
+          </article>
+
+          <article class="card">
+            <div class="symbol">⚙</div>
+            <h3>Individuelle Anfragen</h3>
+            <p>Du hast eine Idee? Schreib uns und wir besprechen,
+              welche digitale Lösung zu deinem Vorhaben passt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="eyebrow">About NOVEX TEC</div>
+        <h2>Technologie. Klar gedacht.</h2>
+        <p>
+          NOVEX TEC verbindet die Welt der Technik mit digitalen
+          Dienstleistungen. Unser Ziel ist es, Ideen übersichtlich
+          umzusetzen und Technik verständlicher und zugänglicher zu machen.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Bereit für dein nächstes Projekt?</h2>
+          <p>Fragen, Ideen oder eine Anfrage? Wir freuen uns auf deine Nachricht.</p>
+          <a class="email" href="mailto:info.novextec@gmail.com">
+            info.novextec@gmail.com
+          </a>
+          <br>
+          <a class="button" href="mailto:info.novextec@gmail.com?subject=Anfrage%20an%20NOVEX%20TEC">
+            E-Mail schreiben
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> NOVEX TEC</span>
+      <span>Technology & Digital Services</span>
+    </div>
+  </footer>
+</body>
+</html>
