@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entdecke die Demo-Projekte und kreativen Arbeiten von NOVEX TEC.">
+  <title>Portfolio | NOVEX TEC</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --card: #111827;
+      --blue: #2787f5;
+      --silver: #c5ceda;
+      --text: #f4f7fb;
+      --muted: #9ba8ba;
+      --border: #263449;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--silver);
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 55px;
+      background: radial-gradient(
+        ellipse at top,
+        #142b49 0%,
+        var(--bg) 68%
+      );
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .notice {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--silver);
+      font-size: 0.85rem;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 22px 80px;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+    }
+
+    .project-art {
+      min-height: 185px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #172a45, #10141f 75%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-art .symbol {
+      font-size: 2.7rem;
+      color: var(--blue);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .project-art h3 {
+      font-size: 1.15rem;
+    }
+
+    .project-content {
+      padding: 23px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 4px 9px;
+      color: #8fc2ff;
+      background: #172d49;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: var(--blue);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      margin-top: 65px;
+      padding: 40px 25px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #111c2d, #0b101a);
+    }
+
+    .cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--blue);
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #126bd0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 25px 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--silver);
+      margin: 0 8px;
+    }
+
+    @media (max-width: 800px) {
+      .projects {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      header {
+        padding: 18px 5%;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html">NOVEX <span>TEC</span></a>
+
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="gadgets.html">Gadgets</a>
+      <a href="reports.html">Reports</a>
+      <a href="presentations.html">Präsentationen</a>
+      <a href="documents.html">Dokumente</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Ideen werden sichtbar</p>
+    <h1>Unser <span>Portfolio</span></h1>
+    <p class="intro">
+      Entdecke ausgewählte Beispielprojekte von NOVEX TEC.
+      Wir verbinden klares Design, digitale Lösungen und
+      praktische Ideen für kleine Unternehmen.
+    </p>
+    <p class="notice">Demo-Projekte · Erstellt zum Präsentieren unserer Fähigkeiten</p>
+  </section>
+
+  <main>
+    <section aria-labelledby="projects-title">
+      <div class="section-heading">
+        <h2 id="projects-title">Unsere Beispielarbeiten</h2>
+        <p>So könnten Ergebnisse für unsere zukünftigen Kunden aussehen.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project-art">
+            <div class="symbol">01</div>
+            <h3>Business Report</h3>
+          </div>
+          <div class="project-content">
+            <span class="tag">Reports & PDFs</span>
+            <h3>Informationen klar präsentieren</h3>
+            <p>
+              Ein Muster für einen übersichtlichen Bericht
+              mit strukturierten Abschnitten, verständlichen
+              Informationen und einem professionellen Layout.
+            </p>
+            <a class="project-link" href="reports.html">
+              Zur Dienstleistung &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art">
+            <div class="symbol">02</div>
+            <h3>Business Presentation</h3>
+          </div>
+          <div class="project-content">
+            <span class="tag">Präsentationen</span>
+            <h3>Ideen überzeugend zeigen</h3>
+            <p>
+              Ein Beispiel für moderne Präsentationsfolien
+              mit einheitlichen Farben, klaren Aussagen
+              und einer gut lesbaren Gestaltung.
+            </p>
+            <a class="project-link" href="presentations.html">
+              Zur Dienstleistung &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art">
+            <div class="symbol">03</div>
+            <h3>Social Media Design</h3>
+          </div>
+          <div class="project-content">
+            <span class="tag">Einfaches Design</span>
+            <h3>Eine Marke sichtbar machen</h3>
+            <p>
+              Ein Designkonzept für einen Werbebeitrag,
+              der Informationen übersichtlich vermittelt
+              und zum Erscheinungsbild eines Unternehmens passt.
+            </p>
+            <a class="project-link" href="contact.html">
+              Projekt anfragen &rarr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Habt ihr eine Idee?</h2>
+      <p>
+        Wir möchten gemeinsam mit kleinen Unternehmen
+        passende digitale Lösungen entwickeln.
+      </p>
+      <a class="button" href="mailto:info.novextec@gmail.com?subject=Projektanfrage%20NOVEX%20TEC">
+        Projekt anfragen
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NOVEX TEC. Alle Rechte vorbehalten.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Startseite</a>
+      <a href="privacy.html">Datenschutz</a>
+      <a href="contact.html">Kontakt</a>
+    </p>
+  </footer>
+</body>
+</html>
