@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | NOVEX TEC</title>
+  <meta name="description" content="Antworten auf häufige Fragen zu den digitalen Services von NOVEX TEC.">
+  <style>
+    :root {
+      --bg: #080b12;
+      --panel: #111827;
+      --blue: #1687ff;
+      --text: #f4f7fb;
+      --muted: #aab5c6;
+      --border: #263449;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a, footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover, footer a:hover {
+      color: var(--blue);
+    }
+
+    main {
+      width: min(850px, 88%);
+      margin: 65px auto 90px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 3.7rem);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+
+    .intro {
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 13px;
+      overflow: hidden;
+    }
+
+    details summary {
+      cursor: pointer;
+      padding: 20px;
+      font-weight: bold;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 1.4rem;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .answer {
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      margin-top: 35px;
+      padding: 26px;
+      border: 1px solid var(--blue);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #101b2e, #0b101b);
+    }
+
+    .contact-box h2 {
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 7px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 8%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 6%;
+      }
+
+      main {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">NOVEX <span>TEC</span></a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Preise</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Support & Informationen</p>
+    <h1>Häufige Fragen<span style="color:#1687ff;">.</span></h1>
+    <p class="intro">
+      Du möchtest mit NOVEX TEC zusammenarbeiten? Hier findest du Antworten
+      auf wichtige Fragen zu unseren digitalen Services.
+    </p>
+
+    <section class="faq-item">
+      <details>
+        <summary>Was bietet NOVEX TEC an?</summary>
+        <div class="answer">
+          Wir erstellen digitale Inhalte wie Reports, Präsentationen und
+          Dokumente. Ausserdem beschäftigen wir uns mit Gadget-Funden und
+          interessanten Angeboten.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Wie kann ich eine Anfrage stellen?</summary>
+        <div class="answer">
+          Nutze unsere Kontaktseite und beschreibe kurz, was du benötigst.
+          Je genauer deine Angaben sind, desto besser können wir dein Projekt
+          einschätzen.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Wie viel kostet ein Auftrag?</summary>
+        <div class="answer">
+          Die Kosten hängen vom Umfang und der Komplexität ab.
+          Unsere angegebenen Preise sind Richtpreise. Vor Beginn sollten
+          Umfang, Preis und Liefertermin gemeinsam bestätigt werden.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Wie lange dauert die Bearbeitung?</summary>
+        <div class="answer">
+          Das hängt vom jeweiligen Projekt ab. Wir nennen dir nach der
+          Besprechung deiner Anfrage einen voraussichtlichen Liefertermin.
+          Bitte plane genügend Zeit für Rückfragen und Änderungen ein.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Sind Änderungen möglich?</summary>
+        <div class="answer">
+          Kleine Anpassungen können je nach vereinbartem Angebot enthalten
+          sein. Grössere Änderungen oder zusätzliche Wünsche sollten vorher
+          abgesprochen werden.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>In welchem Format erhalte ich meine Dateien?</summary>
+        <div class="answer">
+          Das vereinbaren wir vor Beginn. Je nach Auftrag kommen beispielsweise
+          PDF-, PPTX- oder DOCX-Dateien infrage. Sonderformate müssen vorher
+          abgesprochen werden.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Kann ich eigene Wünsche und Farben angeben?</summary>
+        <div class="answer">
+          Ja. Teile uns deine Vorstellungen, Wunschfarben, Beispiele und
+          besonderen Anforderungen möglichst früh mit.
+        </div>
+      </details>
+    </section>
+
+    <section class="faq-item">
+      <details>
+        <summary>Wie funktioniert die Bezahlung?</summary>
+        <div class="answer">
+          Zahlungsart und Zahlungszeitpunkt müssen vor dem Auftrag vereinbart
+          werden. Wir bestätigen die Bedingungen, bevor wir mit einer bezahlten
+          Arbeit beginnen.
+        </div>
+      </details>
+    </section>
+
+    <div class="contact-box">
+      <h2>Noch eine Frage?</h2>
+      <p>Deine Frage ist nicht dabei? Schreib uns, und wir besprechen dein Anliegen.</p>
+      <a class="button" href="contact.html">Kontakt aufnehmen</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 NOVEX TEC · Alle Rechte vorbehalten.</p>
+    <p>
+      <a href="about.html">Über uns</a> ·
+      <a href="pricing.html">Preise</a> ·
+      <a href="privacy.html">Datenschutz</a>
+    </p>
+  </footer>
+
+</body>
+</html>
