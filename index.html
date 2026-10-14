@@ -1,190 +1,1220 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NOVEX TEC – Tech, Gadgets und digitale Dienstleistungen.">
-<title>NOVEX TEC | Technology & Digital Services</title>
-<style>
-:root {
-  --bg:#080b12; --panel:#111824; --blue:#278bff;
-  --silver:#d2dbea; --muted:#a0aec0; --line:#29384d;
-}
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
-  margin:0; background:var(--bg); color:#f5f7fb;
-  font-family:Arial,Helvetica,sans-serif; line-height:1.6;
-}
-a {color:inherit;text-decoration:none}
-.container {width:min(1100px,90%);margin:auto}
-header {
-  position:sticky;top:0;z-index:10;
-  background:rgba(8,11,18,.95);border-bottom:1px solid var(--line);
-}
-nav {
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
-}
-.logo {font-size:1.45rem;font-weight:900;letter-spacing:2px}
-.logo span,.blue {color:var(--blue)}
-.navlinks {display:flex;gap:22px;flex-wrap:wrap}
-.navlinks a:hover {color:var(--blue)}
-.button {
-  display:inline-block;padding:12px 19px;border-radius:8px;
-  background:var(--blue);border:1px solid var(--blue);
-  color:white;font-weight:bold;cursor:pointer;
-}
-.button:hover {background:#086bd9}
-.button.outline {background:transparent;border-color:#53657d}
-.hero {
-  padding:105px 0;text-align:center;
-  background:radial-gradient(ellipse at 50% 0%,#12366b,transparent 65%);
-}
-.eyebrow {
-  color:#79b8ff;text-transform:uppercase;
-  letter-spacing:3px;font-size:.8rem;font-weight:bold;
-}
-h1 {font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;margin:20px 0}
-.hero p {max-width:680px;margin:0 auto 30px;color:var(--silver);font-size:1.1rem}
-.actions {display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-section {padding:75px 0}
-.section-title {text-align:center;margin-bottom:36px}
-.section-title h2 {font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 8px}
-.section-title p {color:var(--muted);margin:0}
-.grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card {
-  display:flex;flex-direction:column;align-items:flex-start;
-  padding:25px;background:var(--panel);border:1px solid var(--line);
-  border-radius:14px;transition:transform .2s,border-color .2s;
-}
-.card:hover {transform:translateY(-4px);border-color:var(--blue)}
-.symbol {font-size:2rem}
-.card h3 {margin:12px 0 8px}
-.card p {color:var(--muted);margin:0 0 20px}
-.card .button {margin-top:auto}
-.about {background:#0c111b;border-block:1px solid var(--line)}
-.about-inner {max-width:760px;margin:auto;text-align:center}
-.about-inner p {color:var(--silver)}
-.contact-box {
-  max-width:760px;margin:auto;padding:35px;text-align:center;
-  background:linear-gradient(135deg,#111824,#10264a);
-  border:1px solid #29476f;border-radius:18px;
-}
-.contact-box p {color:var(--silver)}
-footer {padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-.footer-inner {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:760px) {
-  nav {padding:15px 0;align-items:flex-start;flex-direction:column}
-  .navlinks {gap:14px}
-  .grid {grid-template-columns:1fr}
-  .hero {padding:75px 0}
-  section {padding:55px 0}
-  .contact-box {padding:25px 18px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="NOVEX TEC – digitale Services, kreative Lösungen und interessante Tech-Funde.">
+  <title>NOVEX TEC | Think Beyond Technology</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --surface: #101622;
+      --surface2: #141e2d;
+      --blue: #1687ff;
+      --cyan: #55d5ff;
+      --white: #f4f7fb;
+      --muted: #a4b0c2;
+      --border: rgba(166, 193, 224, .15);
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max), 88%);
+      margin-inline: auto;
+    }
+
+    .topline {
+      height: 3px;
+      background: linear-gradient(90deg, #1687ff, #55d5ff, #1687ff);
+    }
+
+    /* NAVIGATION */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 11, 18, .91);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 23px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-links .nav-cta {
+      color: white;
+      background: var(--blue);
+      padding: 9px 15px;
+      border-radius: 7px;
+      font-weight: 700;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: #0873e8;
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      right: -100px;
+      top: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(22, 135, 255, .20) 0%,
+        rgba(22, 135, 255, .06) 35%,
+        transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .17;
+      background-image:
+        linear-gradient(rgba(120,160,210,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120,160,210,.12) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to right, black, transparent 90%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding-block: 100px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--blue);
+    }
+
+    h1 {
+      font-size: clamp(44px, 6.3vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin: 25px 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #1687ff, #69ddff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 8px 35px rgba(22, 135, 255, .2);
+    }
+
+    .btn-primary:hover {
+      background: #0873e8;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--blue);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 350px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit {
+      width: min(340px, 90%);
+      aspect-ratio: 1;
+      border: 1px solid rgba(85, 213, 255, .23);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      box-shadow: 0 0 100px rgba(22, 135, 255, .08);
+    }
+
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(85, 213, 255, .16);
+      border-radius: 50%;
+    }
+
+    .orbit::before {
+      inset: 22px;
+    }
+
+    .orbit::after {
+      inset: 48px;
+    }
+
+    .orbit-center {
+      z-index: 1;
+      width: 145px;
+      height: 145px;
+      border-radius: 32px;
+      transform: rotate(-8deg);
+      background: linear-gradient(145deg, #172c46, #0b1220);
+      border: 1px solid rgba(85,213,255,.4);
+      box-shadow: 0 0 65px rgba(22,135,255,.22);
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .orbit-center strong {
+      font-size: 27px;
+      letter-spacing: 2px;
+      transform: rotate(8deg);
+    }
+
+    .orbit-center span {
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: 3px;
+      transform: rotate(8deg);
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 22px var(--blue);
+    }
+
+    .dot-one { top: 14%; left: 25%; }
+    .dot-two { right: 6%; top: 45%; }
+    .dot-three { bottom: 9%; left: 38%; }
+
+    .visual-tag {
+      position: absolute;
+      border: 1px solid var(--border);
+      background: #101622;
+      border-radius: 9px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    }
+
+    .tag-one { top: 12%; right: -1%; }
+    .tag-two { bottom: 12%; left: -2%; }
+
+    /* TRUST / INTRO */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat {
+      padding: 28px 15px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding-block: 95px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 13px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 245px;
+      position: relative;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: linear-gradient(145deg, #121a28, #0c111a);
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(22,135,255,.7);
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+    }
+
+    .service-icon {
+      width: 47px;
+      height: 47px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: var(--cyan);
+      background: rgba(22,135,255,.12);
+      border: 1px solid rgba(22,135,255,.2);
+      font-size: 22px;
+      margin-bottom: 23px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .text-link {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 750;
+      margin-top: auto;
+    }
+
+    .text-link:hover {
+      color: white;
+    }
+
+    /* FEATURE SECTION */
+
+    .feature {
+      background: linear-gradient(110deg, #0e1725, #0a0f18);
+      border-block: 1px solid var(--border);
+    }
+
+    .feature-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .feature-copy h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    .feature-copy p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #d9e3f1;
+      font-size: 14px;
+    }
+
+    .check {
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .feature-panel {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #0a101a;
+      box-shadow: 0 25px 80px rgba(0,0,0,.22);
+    }
+
+    .panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .panel-status {
+      color: var(--cyan);
+      font-size: 11px;
+    }
+
+    .panel-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(166,193,224,.08);
+    }
+
+    .panel-row:last-child {
+      border-bottom: none;
+    }
+
+    .panel-symbol {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: #13253b;
+      color: var(--cyan);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .panel-row strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .panel-row small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background:
+        radial-gradient(ellipse at top right, rgba(22,135,255,.13), transparent 50%),
+        var(--surface);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .portfolio-card h3 {
+      font-size: 23px;
+      margin: 8px 0;
+    }
+
+    .portfolio-card p {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .portfolio-mark {
+      font-size: 42px;
+      font-weight: 900;
+      color: rgba(85,213,255,.7);
+      letter-spacing: -3px;
+    }
+
+    .demo-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ABOUT */
+
+    .about-strip {
+      padding-block: 65px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #0c111a;
+    }
+
+    .about-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .about-inner h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin: 8px 0;
+    }
+
+    .about-inner p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding-block: 95px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 25px;
+      border: 1px solid rgba(22,135,255,.35);
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(22,135,255,.2), transparent 65%),
+        #0e1420;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(31px, 5vw, 48px);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-box .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 45px 0 22px;
+      background: #070a10;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+
+    .footer-about p {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 330px;
+      margin-top: 15px;
+    }
+
+    .footer-col h3 {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0;
+    }
+
+    .footer-col a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      animation: rise .8s ease both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+      .nav {
+        padding-block: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 12px 19px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-block: 75px;
+      }
+
+      .hero-visual {
+        min-height: 320px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .nav {
+        gap: 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-links {
+        gap: 10px 15px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-block: 65px 40px;
+      }
+
+      h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .hero-visual {
+        min-height: 290px;
+      }
+
+      .orbit {
+        width: 270px;
+      }
+
+      .orbit-center {
+        width: 115px;
+        height: 115px;
+      }
+
+      .orbit-center strong {
+        font-size: 22px;
+      }
+
+      .visual-tag {
+        font-size: 10px;
+        padding: 8px 10px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding-block: 65px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 215px;
+      }
+
+      .feature-panel {
+        padding: 20px;
+      }
+
+      .portfolio-card {
+        grid-template-columns: 1fr;
+        padding: 23px;
+      }
+
+      .portfolio-mark {
+        display: none;
+      }
+
+      .about-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .cta-box {
+        padding: 45px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <nav class="container">
-    <a class="logo" href="index.html">NOVEX <span>TEC</span></a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">Über uns</a>
-      <a href="#contact">Kontakt</a>
-    </div>
-  </nav>
-</header>
 
-<main>
-<section class="hero">
-  <div class="container">
-    <div class="eyebrow">Technology · Innovation · Digital</div>
-    <h1>Think Smart.<br><span class="blue">Think NOVEX.</span></h1>
-    <p>Tech & Gadgets, digitale Dienstleistungen und moderne Lösungen.
-    Entdecke unser Angebot oder erzähle uns von deinem Projekt.</p>
-    <div class="actions">
-      <a class="button" href="#services">Angebot entdecken</a>
-      <a class="button outline" href="#contact">Kontakt aufnehmen</a>
-    </div>
-  </div>
-</section>
+  <div class="topline"></div>
 
-<section id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>Was wir anbieten</h2>
-      <p>Klicke auf einen Bereich, um mehr zu erfahren.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">⌘</div>
-        <h3>Tech & Gadgets</h3>
-        <p>Praktische Technik, spannende Gadgets und ausgewählte Produktideen.</p>
-        <a class="button" href="gadgets.html">Angebot ansehen →</a>
-      </article>
-      <article class="card">
-        <div class="symbol">▤</div>
-        <h3>Reports & PDFs</h3>
-        <p>Strukturierte Reports, übersichtliche PDFs und digitale Dokumente.</p>
-        <a class="button" href="reports.html">Angebot ansehen →</a>
-      </article>
-      <article class="card">
-        <div class="symbol">▣</div>
-        <h3>Präsentationen</h3>
-        <p>Moderne Präsentationen mit klarer Struktur und verständlichen Inhalten.</p>
-        <a class="button" href="presentations.html">Angebot ansehen →</a>
-      </article>
-      <article class="card">
-        <div class="symbol">✦</div>
-        <h3>Digitale Dokumente</h3>
-        <p>Individuell formatierte Unterlagen für unterschiedliche Projekte.</p>
-        <a class="button" href="documents.html">Angebot ansehen →</a>
-      </article>
-      <article class="card">
-        <div class="symbol">↗</div>
-        <h3>Deals & Angebote</h3>
-        <p>Entdecke interessante Tech-Angebote und ausgewählte Fundstücke.</p>
-        <a class="button" href="deals.html">Angebot ansehen →</a>
-      </article>
-      <article class="card">
-        <div class="symbol">⚙</div>
-        <h3>Individuelle Anfragen</h3>
-        <p>Du hast eine Idee? Teile uns mit, wobei du Unterstützung brauchst.</p>
-        <a class="button" href="#contact">Anfrage stellen →</a>
-      </article>
-    </div>
-  </div>
-</section>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="./index.html" aria-label="NOVEX TEC Startseite">
+        NOVEX <span>TEC</span>
+      </a>
 
-<section class="about" id="about">
-  <div class="container about-inner">
-    <div class="eyebrow">About NOVEX TEC</div>
-    <h2>Technologie. Klar gedacht.</h2>
-    <p>NOVEX TEC verbindet Technik mit digitalen Dienstleistungen.
-    Unser Ziel sind übersichtliche, moderne und praktische Lösungen.</p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <div class="eyebrow">Let's connect</div>
-      <h2>Bereit für dein nächstes Projekt?</h2>
-      <p>Schreib uns deine Fragen oder sende uns eine Anfrage.</p>
-      <p><a class="blue" href="mailto:info.novextec@gmail.com">info.novextec@gmail.com</a></p>
-      <a class="button" href="mailto:info.novextec@gmail.com?subject=Anfrage%20an%20NOVEX%20TEC">Jetzt anfragen</a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="./index.html">Home</a>
+        <a href="./gadgets.html">Gadgets</a>
+        <a href="./reports.html">Reports</a>
+        <a href="./presentations.html">Presentations</a>
+        <a href="./documents.html">Documents</a>
+        <a href="./deals.html">Deals</a>
+        <a href="./portfolio.html">Portfolio</a>
+        <a href="./about.html">About Us</a>
+        <a href="./pricing.html">Preise</a>
+        <a class="nav-cta" href="./contact.html">Kontakt ↗</a>
+      </nav>
     </div>
-  </div>
-</section>
-</main>
+  </header>
 
-<footer>
-  <div class="container footer-inner">
-    <span>© 2026 NOVEX TEC</span>
-    <span>Technology & Digital Services</span>
-  </div>
-</footer>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div class="reveal">
+          <span class="eyebrow">Independent digital project</span>
+
+          <h1>
+            Think beyond.<br>
+            Build <span class="gradient-text">what's next.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Willkommen bei NOVEX TEC. Wir verbinden Technologie,
+            digitale Services und kreative Ideen – mit dem Anspruch,
+            Dinge einfacher, klarer und besser zu machen.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./contact.html">
+              Projekt starten <span>↗</span>
+            </a>
+
+            <a class="btn btn-secondary" href="./portfolio.html">
+              Portfolio entdecken →
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="NOVEX TEC Technologie-Visual">
+          <div class="orbit">
+            <div class="orbit-center">
+              <div>
+                <strong>NOVEX</strong><br>
+                <span>TECHNOLOGY</span>
+              </div>
+            </div>
+            <span class="orbit-dot dot-one"></span>
+            <span class="orbit-dot dot-two"></span>
+            <span class="orbit-dot dot-three"></span>
+          </div>
+
+          <div class="visual-tag tag-one">DIGITAL SOLUTIONS</div>
+          <div class="visual-tag tag-two">IDEAS → RESULTS</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="stats" aria-label="Unsere Schwerpunkte">
+      <div class="stat">
+        <strong>Digital First</strong>
+        <span>Digitale Lösungen im Mittelpunkt</span>
+      </div>
+      <div class="stat">
+        <strong>Creative Thinking</strong>
+        <span>Ideen in klare Konzepte verwandeln</span>
+      </div>
+      <div class="stat">
+        <strong>Tech Discovery</strong>
+        <span>Spannende Gadgets entdecken</span>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>Digitale Ideen.<br><span class="gradient-text">Praktisch umgesetzt.</span></h2>
+          <p>
+            Entdecke unsere Bereiche und finde heraus, wie wir dich
+            bei digitalen Aufgaben und kreativen Projekten unterstützen können.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <a class="service-card" href="./reports.html">
+            <div class="service-icon">▤</div>
+            <h3>Reports & Research</h3>
+            <p>Übersichtliche Informationen, strukturierte Reports und verständlich aufbereitete Inhalte.</p>
+            <span class="text-link">Reports entdecken ↗</span>
+          </a>
+
+          <a class="service-card" href="./presentations.html">
+            <div class="service-icon">▥</div>
+            <h3>Presentations</h3>
+            <p>Moderne Präsentationen mit klarem Aufbau, stimmigem Design und nachvollziehbarer Struktur.</p>
+            <span class="text-link">Präsentationen ansehen ↗</span>
+          </a>
+
+          <a class="service-card" href="./documents.html">
+            <div class="service-icon">▧</div>
+            <h3>Digital Documents</h3>
+            <p>Sauber gestaltete digitale Dokumente für Projekte, Organisation und den Alltag.</p>
+            <span class="text-link">Dokumente entdecken ↗</span>
+          </a>
+
+          <a class="service-card" href="./gadgets.html">
+            <div class="service-icon">⌘</div>
+            <h3>Tech & Gadgets</h3>
+            <p>Interessante Technik, praktische Tools und spannende Produkte im Blick.</p>
+            <span class="text-link">Gadgets entdecken ↗</span>
+          </a>
+
+          <a class="service-card" href="./deals.html">
+            <div class="service-icon">%</div>
+            <h3>Deals & Finds</h3>
+            <p>Spannende Fundstücke und Angebote, bei denen sich ein genauer Blick lohnen kann.</p>
+            <span class="text-link">Funde entdecken ↗</span>
+          </a>
+
+          <a class="service-card" href="./portfolio.html">
+            <div class="service-icon">◈</div>
+            <h3>Our Portfolio</h3>
+            <p>Ein Einblick in Konzepte, Designideen und ausgewählte Beispielprojekte.</p>
+            <span class="text-link">Portfolio ansehen ↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="feature">
+      <div class="container section feature-inner">
+
+        <div class="feature-copy">
+          <span class="eyebrow">A clear process</span>
+          <h2>Von der Idee<br>zum <span class="gradient-text">Ergebnis.</span></h2>
+          <p>
+            Gute Zusammenarbeit beginnt mit einem klaren Ziel.
+            Deshalb setzen wir auf einen verständlichen Ablauf und
+            offene Absprachen, bevor ein Auftrag startet.
+          </p>
+
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Deine Idee und Anforderungen verstehen</span></li>
+            <li><span class="check">✓</span><span>Umfang, Preis und Zeitrahmen gemeinsam klären</span></li>
+            <li><span class="check">✓</span><span>Das vereinbarte Ergebnis sorgfältig ausarbeiten</span></li>
+          </ul>
+
+          <a class="btn btn-primary" href="./contact.html">Anfrage senden ↗</a>
+        </div>
+
+        <div class="feature-panel">
+          <div class="panel-top">
+            <strong>NOVEX TEC / WORKFLOW</strong>
+            <span class="panel-status">● PROCESS</span>
+          </div>
+
+          <div class="panel-row">
+            <div class="panel-symbol">01</div>
+            <div>
+              <strong>Discover</strong>
+              <small>Idee und Ziel definieren</small>
+            </div>
+          </div>
+
+          <div class="panel-row">
+            <div class="panel-symbol">02</div>
+            <div>
+              <strong>Plan</strong>
+              <small>Umfang und Ablauf abstimmen</small>
+            </div>
+          </div>
+
+          <div class="panel-row">
+            <div class="panel-symbol">03</div>
+            <div>
+              <strong>Create</strong>
+              <small>Die vereinbarte Lösung gestalten</small>
+            </div>
+          </div>
+
+          <div class="panel-row">
+            <div class="panel-symbol">04</div>
+            <div>
+              <strong>Deliver</strong>
+              <small>Ergebnis übergeben und Feedback klären</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Selected work</span>
+          <h2>Ideen sichtbar machen.</h2>
+          <p>
+            Ein wachsender Einblick in unsere Designideen und digitalen Konzepte.
+          </p>
+        </div>
+
+        <div class="portfolio-card">
+          <div>
+            <span class="eyebrow">NOVEX TEC / PORTFOLIO</span>
+            <h3>Design meets technology.</h3>
+            <p>
+              Entdecke ausgewählte Beispiele und Konzepte rund um
+              digitale Gestaltung, Präsentationen und praktische Lösungen.
+            </p>
+            <a class="btn btn-secondary" style="margin-top:22px" href="./portfolio.html">
+              Portfolio öffnen ↗
+            </a>
+            <p class="demo-note">
+              Hinweis: Beispielkonzepte sind als Demos gekennzeichnet.
+              Sie sind keine erfundenen Kundenaufträge.
+            </p>
+          </div>
+
+          <div class="portfolio-mark" aria-hidden="true">N/T</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-strip">
+      <div class="container about-inner">
+        <div>
+          <span class="eyebrow">About NOVEX TEC</span>
+          <h2>Technologie. Klar gedacht.</h2>
+          <p>
+            Wir sind ein junges Projekt mit Interesse an Technik,
+            digitalen Dienstleistungen und kreativen Ideen.
+            Erfahre mehr über unsere Motivation und unseren Ansatz.
+          </p>
+        </div>
+
+        <a class="btn btn-secondary" href="./about.html">
+          Über uns erfahren ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <span class="eyebrow">Let's build something</span>
+          <h2>Du hast eine <span class="gradient-text">Idee?</span></h2>
+          <p>
+            Erzähl uns, was du vorhast. Gemeinsam können wir klären,
+            ob und wie NOVEX TEC dich unterstützen kann.
+          </p>
+          <a class="btn btn-primary" href="./contact.html">
+            Kontakt aufnehmen ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+        <div class="footer-about">
+          <a class="logo" href="./index.html">NOVEX <span>TEC</span></a>
+          <p>
+            Digitale Services, kreative Konzepte und spannende
+            Tech-Funde. Eine junge Marke mit Blick nach vorne.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>ENTDECKEN</h3>
+          <a href="./gadgets.html">Gadgets</a>
+          <a href="./reports.html">Reports</a>
+          <a href="./presentations.html">Presentations</a>
+          <a href="./documents.html">Documents</a>
+          <a href="./deals.html">Deals</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>NOVEX TEC</h3>
+          <a href="./about.html">About Us</a>
+          <a href="./portfolio.html">Portfolio</a>
+          <a href="./pricing.html">Preise</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">Kontakt</a>
+          <a href="./privacy.html">Datenschutz</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 NOVEX TEC. Alle Rechte vorbehalten.</span>
+        <span>Built with ideas. Powered by technology.</span>
+      </div>
+
+    </div>
+  </footer>
+
 </body>
 </html>
