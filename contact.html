@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontaktiere NOVEX TEC für digitale Dienstleistungen, Präsentationen, Reports und Design.">
+  <title>Kontakt | NOVEX TEC</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --card: #111827;
+      --blue: #2787f5;
+      --silver: #c5ceda;
+      --text: #f4f7fb;
+      --muted: #9ba8ba;
+      --border: #263449;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--silver);
+      font-size: 0.92rem;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 20px 45px;
+      background: radial-gradient(ellipse at top, #142b49, var(--bg) 70%);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 15px 0;
+      line-height: 1.15;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p:last-child {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 22px 80px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .contact-method {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-method h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-method p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      overflow-wrap: anywhere;
+    }
+
+    .email-link {
+      color: #70b1ff;
+      font-weight: bold;
+    }
+
+    form {
+      margin-top: 22px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.92rem;
+      margin: 15px 0 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 13px;
+      background: #090e18;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--blue);
+      outline-offset: 1px;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 13px 18px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button:hover {
+      background: #126bd0;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .faq-link {
+      display: inline-block;
+      color: #70b1ff;
+      margin-top: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--silver);
+      margin: 0 8px;
+    }
+
+    @media (max-width: 760px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 18px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html">NOVEX <span>TEC</span></a>
+
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="about.html">Über uns</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Preise</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Wir sind für euch da</p>
+    <h1>Kontakt <span>aufnehmen</span></h1>
+    <p>
+      Du hast eine Idee oder benötigst Unterstützung bei einem
+      digitalen Projekt? Beschreibe uns dein Vorhaben.
+      Wir schauen gemeinsam, was möglich ist.
+    </p>
+  </section>
+
+  <main>
+    <div class="contact-grid">
+
+      <section class="panel">
+        <h2>Erzähl uns von deinem Projekt</h2>
+        <p class="muted">
+          Wir unterstützen kleine Unternehmen und lokale
+          Geschäfte bei überschaubaren digitalen Aufgaben.
+        </p>
+
+        <div class="contact-method">
+          <h3>E-Mail</h3>
+          <p>
+            <a class="email-link" href="mailto:info.novextec@gmail.com">
+              info.novextec@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-method">
+          <h3>Unsere Dienstleistungen</h3>
+          <p>Reports, PDFs, Präsentationen und einfache Werbegrafiken.</p>
+        </div>
+
+        <div class="contact-method">
+          <h3>Unser Ansatz</h3>
+          <p>
+            Klare Absprachen, transparente Preise und ehrliche
+            Kommunikation darüber, was wir leisten können.
+          </p>
+        </div>
+
+        <a class="faq-link" href="faq.html">
+          Häufige Fragen ansehen &rarr;
+        </a>
+      </section>
+
+      <section class="panel">
+        <h2>Anfrage vorbereiten</h2>
+        <p class="muted">
+          Fülle die Felder aus. Dein E-Mail-Programm öffnet sich
+          anschliessend mit einer vorbereiteten Nachricht.
+        </p>
+
+        <form id="contactForm">
+          <label for="name">Dein Name oder Firmenname</label>
+          <input id="name" name="name" maxlength="100"
+                 autocomplete="name" required>
+
+          <label for="email">Deine E-Mail-Adresse</label>
+          <input id="email" name="email" type="email"
+                 maxlength="150" autocomplete="email" required>
+
+          <label for="service">Gewünschte Dienstleistung</label>
+          <select id="service" name="service" required>
+            <option value="">Bitte auswählen</option>
+            <option>Reports & PDFs</option>
+            <option>Präsentationen</option>
+            <option>Dokumente & Vorlagen</option>
+            <option>Werbegrafiken</option>
+            <option>Gadget-Vergleich</option>
+            <option>Andere Anfrage</option>
+          </select>
+
+          <label for="budget">Ungefähres Budget</label>
+          <select id="budget" name="budget">
+            <option>Nicht festgelegt</option>
+            <option>Bis CHF 15</option>
+            <option>CHF 15–30</option>
+            <option>CHF 30–50</option>
+            <option>Über CHF 50</option>
+          </select>
+
+          <label for="message">Was benötigst du?</label>
+          <textarea id="message" name="message" maxlength="2000"
+                    placeholder="Beschreibe dein Projekt möglichst konkret..."
+                    required></textarea>
+
+          <button class="button" type="submit">
+            Anfrage per E-Mail vorbereiten
+          </button>
+
+          <p class="note">
+            Hinweis: Dieses Formular überträgt keine Daten an
+            einen Server. Es öffnet dein E-Mail-Programm.
+            Prüfe die Nachricht und sende sie selbst ab.
+          </p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NOVEX TEC. Alle Rechte vorbehalten.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Startseite</a>
+      <a href="about.html">Über uns</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="privacy.html">Datenschutz</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const budget = document.getElementById("budget").value;
+      const message = document.getElementById("message").value.trim();
+
+      const subject = "Projektanfrage - NOVEX TEC";
+
+      const body =
+        "Hallo NOVEX TEC,\n\n" +
+        "Name/Firma: " + name + "\n" +
+        "E-Mail: " + email + "\n" +
+        "Dienstleistung: " + service + "\n" +
+        "Budget: " + budget + "\n\n" +
+        "Projektbeschreibung:\n" + message + "\n\n" +
+        "Freundliche Grüsse\n" + name;
+
+      const mailto =
+        "mailto:info.novextec@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
