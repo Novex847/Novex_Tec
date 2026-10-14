@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lerne NOVEX TEC kennen: ein junges Team mit Ideen für digitale Lösungen.">
+  <title>Über uns | NOVEX TEC</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --card: #111827;
+      --blue: #2787f5;
+      --silver: #c5ceda;
+      --text: #f4f7fb;
+      --muted: #9ba8ba;
+      --border: #263449;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span,
+    .blue {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--silver);
+      font-size: 0.92rem;
+    }
+
+    nav a:hover,
+    footer a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 95px 22px 75px;
+      text-align: center;
+      background: radial-gradient(
+        ellipse at top,
+        #142b49,
+        var(--bg) 70%
+      );
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    .hero p:last-child {
+      max-width: 690px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 55px 22px 80px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+
+    .story p,
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .visual {
+      min-height: 300px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(145deg, #172c48, #10141f 75%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .visual .mark {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .visual .mark span {
+      color: var(--blue);
+    }
+
+    .visual p {
+      color: var(--silver);
+      margin-top: 10px;
+    }
+
+    .values-heading {
+      margin-bottom: 25px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .value {
+      padding: 26px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 16px;
+    }
+
+    .value .number {
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .value h3 {
+      margin: 12px 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .value p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .mission {
+      margin-top: 70px;
+      padding: 42px 30px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #111c2d, #0b101a);
+      text-align: center;
+    }
+
+    .mission p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #126bd0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--silver);
+      margin: 0 8px;
+    }
+
+    @media (max-width: 720px) {
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 18px 5%;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html">NOVEX <span>TEC</span></a>
+
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="gadgets.html">Gadgets</a>
+      <a href="reports.html">Reports</a>
+      <a href="presentations.html">Präsentationen</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Das Team hinter der Idee</p>
+    <h1>Über <span class="blue">NOVEX TEC</span></h1>
+    <p>
+      Wir sind ein junges Team mit einer gemeinsamen Idee:
+      digitale Möglichkeiten nutzen, kreativ arbeiten und
+      gemeinsam ein eigenes Projekt aufbauen.
+    </p>
+  </section>
+
+  <main>
+    <section class="story">
+      <div>
+        <h2>Unsere Geschichte</h2>
+
+        <p>
+          NOVEX TEC entsteht aus dem Wunsch, eigene Ideen in
+          die Praxis umzusetzen und ein Unternehmen Schritt
+          für Schritt aufzubauen.
+        </p>
+
+        <p>
+          Wir interessieren uns für Technologie, digitale
+          Werkzeuge und kreative Lösungen. Dabei lernen wir
+          ständig dazu und entwickeln unsere Fähigkeiten
+          gemeinsam weiter.
+        </p>
+
+        <p>
+          Unser Ziel ist es, kleinen Unternehmen und lokalen
+          Geschäften bei einfachen digitalen Aufgaben zu helfen –
+          mit verständlicher Kommunikation, klaren Absprachen
+          und einem modernen Erscheinungsbild.
+        </p>
+      </div>
+
+      <div class="visual">
+        <div class="mark">NOVEX <span>TEC</span></div>
+        <p>Neue Ideen. Digitale Möglichkeiten.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="values-heading">
+        <h2>Was uns wichtig ist</h2>
+        <p class="section-intro">
+          Die Grundsätze, nach denen wir NOVEX TEC aufbauen möchten.
+        </p>
+      </div>
+
+      <div class="values">
+        <article class="value">
+          <span class="number">01 / LERNEN</span>
+          <h3>Neugier</h3>
+          <p>
+            Wir bleiben offen für neue Werkzeuge und Ideen
+            und verbessern unsere Fähigkeiten mit jedem Projekt.
+          </p>
+        </article>
+
+        <article class="value">
+          <span class="number">02 / ZUVERLÄSSIGKEIT</span>
+          <h3>Klare Absprachen</h3>
+          <p>
+            Wir möchten transparent kommunizieren, vereinbarte
+            Aufgaben ernst nehmen und unsere Grenzen ehrlich nennen.
+          </p>
+        </article>
+
+        <article class="value">
+          <span class="number">03 / KREATIVITÄT</span>
+          <h3>Eigene Lösungen</h3>
+          <p>
+            Wir verbinden Funktion und Design und suchen
+            Lösungen, die zum jeweiligen Auftrag passen.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mission">
+      <h2>Unsere Mission</h2>
+      <p>
+        Wir möchten digitale Dienstleistungen verständlich,
+        zugänglich und bezahlbar machen. Dafür starten wir
+        mit überschaubaren Projekten, sammeln Erfahrung und
+        entwickeln NOVEX TEC gemeinsam weiter.
+      </p>
+
+      <a class="button" href="portfolio.html">Unsere Beispiele ansehen</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NOVEX TEC. Alle Rechte vorbehalten.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Startseite</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="privacy.html">Datenschutz</a>
+    </p>
+  </footer>
+</body>
+</html>
